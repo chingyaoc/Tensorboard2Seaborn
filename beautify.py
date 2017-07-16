@@ -1,5 +1,4 @@
 import argparse
-import numpy as np
 import tensorflow as tf
 from tensorflow.python.summary import event_accumulator as ea
 
