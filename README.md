@@ -19,11 +19,11 @@ python beautify.py --logdir=./logdir --smooth=100 --color=#4169E1
 - **color**: pick a color you like :)
 
 ## Example
-###After
-<img src="figure/example.png" width="600">   
+### After
+<img src="figure/example.png" width="800">   
 
-###Before
-<img src="figure/tf_example.png" width="600">
+### Before
+<img src="figure/tf_example.png" width="800">
 
 ## Reference
 - [Tensorboard](https://www.tensorflow.org/get_started/summaries_and_tensorboard)
