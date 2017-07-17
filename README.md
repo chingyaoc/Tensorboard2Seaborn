@@ -1,4 +1,4 @@
-# TFBeauty 🌈
+# Tensorboard2Seaborn 🌈
 Plot Tensorflow event in a beautiful way (using seaborn actually) instead of using Tensorboard. Currently this repo will plot all the scalars store by ```tf.summary()```.
 
 
