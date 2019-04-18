@@ -42,7 +42,7 @@ def plot(logdir: str = '.', smooth: int = 100, color: str = '#4169E1', show=Fals
         # raw curve
         x_list_raw.append(x)
         y_list_raw.append(y)
-    figures = []
+    figures = {}
     for i in range(len(x_list)):
         figure = plt.figure(i)
         plt.subplot(111)
@@ -50,7 +50,7 @@ def plot(logdir: str = '.', smooth: int = 100, color: str = '#4169E1', show=Fals
         plt.plot(x_list_raw[i], y_list_raw[i],
                  color=colors.to_rgba(color_code, alpha=0.4))
         plt.plot(x_list[i], y_list[i], color=color_code, linewidth=1.5)
-        figures.append(figure)
+        figures[scalar_list[i]]=figure
     if show:
         plt.show()
     return figures
