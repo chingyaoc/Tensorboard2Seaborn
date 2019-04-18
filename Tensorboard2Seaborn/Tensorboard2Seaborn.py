@@ -15,7 +15,7 @@ def main():
     args = parser.parse_args()
     params = vars(args)  # convert to ordinary dict
 
-    plot(params, show=True)
+    plot(params['logdir'], int(params['smooth']), params['color'], show=True)
 
 
 if __name__ == '__main__':

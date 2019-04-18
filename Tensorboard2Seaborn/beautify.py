@@ -4,15 +4,15 @@ from matplotlib import colors as colors
 import seaborn as sns
 
 
-def plot(params={'logdir': '.', 'smooth': 100, 'color': '#4169E1'}, show=False):
+def plot(logdir: str = '.', smooth: int = 100, color: str = '#4169E1', show=False):
     sns.set(style="darkgrid")
     sns.set_context("paper")
     ''' beautify tf log
       Use better library (seaborn) to plot tf event file'''
 
-    log_path = params['logdir']
-    smooth_space = int(params['smooth'])
-    color_code = params['color']
+    log_path = logdir
+    smooth_space = smooth
+    color_code = color
 
     acc = ea.EventAccumulator(log_path)
     acc.Reload()
@@ -42,13 +42,15 @@ def plot(params={'logdir': '.', 'smooth': 100, 'color': '#4169E1'}, show=False):
         # raw curve
         x_list_raw.append(x)
         y_list_raw.append(y)
-
+    figures = []
     for i in range(len(x_list)):
-        plt.figure(i)
+        figure = plt.figure(i)
         plt.subplot(111)
         plt.title(scalar_list[i])
         plt.plot(x_list_raw[i], y_list_raw[i],
                  color=colors.to_rgba(color_code, alpha=0.4))
         plt.plot(x_list[i], y_list[i], color=color_code, linewidth=1.5)
+        figures.append(figure)
     if show:
         plt.show()
+    return figures
