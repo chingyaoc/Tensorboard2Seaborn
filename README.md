@@ -3,8 +3,7 @@ Plot Tensorflow event in a beautiful way (using seaborn actually) instead of usi
 
 
 ## Requirement
-- Tensorflow
-- python 2.7
+- tensorboard
 - matplotlib
 - seaborn
 
@@ -12,7 +11,8 @@ Plot Tensorflow event in a beautiful way (using seaborn actually) instead of usi
 Read and plot tf event
 
 ```
-python beautify.py --logdir=./logdir --smooth=100 --color=#4169E1
+pip install .
+Tensorboard2Seaborn --logdir=./logdir --smooth=100 --color=#4169E1
 ```
 - **logdir**: logdir to event file
 - **smooth**: step size for average smoothing
